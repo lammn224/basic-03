@@ -38,27 +38,20 @@ public class Lesson1 {
         } else {
             System.out.println("B la so le");
         }
-        int a = 0;
-        float b = 0;
+
+        int a = 5;
+        float b = 5;
         float x = -b / a;
-        //tim x biet ax+b=0
-        if (a == 0 ) {   
-            if(b==0) {System.out.println("Pt co vo so nghiem");}
-            
-        else{if(a == 0 && b != 0) {
-            System.out.println("pt vo nghiem");
-        }
-        if (a != 0) {
-            System.out.println("pt co nghiem la: " + x);
-        }
+        if (a == 0) {
+            if (b == 0) {
+                System.out.println("pt co vo so nghiem");
+            } else {
+                System.out.println("pt vo nghiem");
+            }
 
-    }
-}
-float x;
-        x = (float) -b / a;
-        System.out.println("Ket qua la: " + x);
-        
-
+        } else {
+            System.out.println("pt co nghiem duy nhat la: " +x);
+        }
     }
 
 }
