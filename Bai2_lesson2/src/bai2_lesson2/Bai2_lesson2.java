@@ -18,32 +18,25 @@ public class Bai2_lesson2 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap n = ");
+        System.out.print("Nhap so: ");
+        int count;
         int n = sc.nextInt();
-        System.out.printf("Cac so nguyen to be hon %d la: \n", n);
-        if (n > 2) {
-            System.out.print(2);
-        }
-        for (int i = 3; i < n; i++ ) {
-            if (so_nguyen_to(i)) {
-                System.out.print(", " + i);
-            }
-        // end point    
-        }
-    }
-   
-    public static boolean so_nguyen_to(int a) {  //hàm ktra so nguyen to
-        // so nguyen n < 2 khong phai la so nguyen to
-        if (a < 2) {
-            return false;
-        }
-        // ktra so nguyen to khi n >= 2
-        for (int b = 2; b <= (int) Math.sqrt(a); b++) {
-            if (a % b == 0) {
-                return false;
+
+        if (n < 3) {
+            System.out.println("Khong co so nguyen to");
+        } else {
+            System.out.printf("Cac so nguyen to be hon %d la: \n", n);
+            for (int i = 2; i < n; i++) {
+                count = 0;
+                for (int j = 1; j <= n; j++) {
+                    if (i % j == 0) {
+                        count++;
+                    }
+                }
+                if (count == 2) {
+                    System.out.print("  " + i);
+                }
             }
         }
-        return true;
-    // end point    
     }
 }
