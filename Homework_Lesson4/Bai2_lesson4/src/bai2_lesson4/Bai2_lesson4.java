@@ -32,15 +32,15 @@ public class Bai2_lesson4 {
         if (a == 0 || a == 1) {
             return false;
         }
-        for (int i = 1; i <= Math.sqrt(a); i++) {
+        for (int i = 1; i <= a; i++) {
             if (a % i == 0) {
                 count++;
             }
         }
         if (count == 2) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
 }

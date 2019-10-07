@@ -29,14 +29,14 @@ public class Bai1_Lesson4 {
         System.out.println(check);
     }
 
-    public static boolean check(int a[]) {
+    public static boolean check(int[] a) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
-            if (a[i] == a[n - 1 - i]) {
-                return true;
+            if (a[i] != a[n - 1 - i]) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 }
