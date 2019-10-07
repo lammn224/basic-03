@@ -18,32 +18,28 @@ public class Bai3_Lesson4 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap vao so phan tu: ");
-        int n = sc.nextInt();
+        System.out.println("Nhap vao chuoi ki tu: ");
+        String a = sc.next();
 
-        String[] a = new String[n];
-        for (int i = 0; i < n; i++) {
-            System.out.printf("Nhap kí tự thứ %d: ", i + 1);
-            a[i] = sc.next();
-        }
+        char[] c = a.toCharArray();
 
-        String[] kq = sap_xep(a);
-        System.out.println("Kq sau khi sap xep: ");
-        for (int i = 0; i < n; i++) {
+        char[] kq = sap_xep(c);
+        System.out.println("Ket qua sau khi sap xep lai cac ki tu: ");
+        for (int i = 0; i < c.length; i++) {
             System.out.print(kq[i] + " ");
         }
     }
 
-    public static String[] sap_xep(String[] a) {
-        for (int i = 0; i < a.length - 1; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i].compareTo(a[j]) > 0) {
-                    String t = a[i];
-                    a[i] = a[j];
-                    a[j] = t;
+    public static char[] sap_xep(char[] c) {
+        for (int i = 0; i < c.length - 1; i++) {
+            for (int j = i + 1; j < c.length; j++) {
+                if (c[i] > c[j]) {
+                    char t = c[i];
+                    c[i] = c[j];
+                    c[j] = t;
                 }
             }
         }
-        return a;
+        return c;
     }
 }
