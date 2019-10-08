@@ -18,6 +18,7 @@ public class Bai4_Lesson5 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //Kiểm tra có đủ các chũ số từ 1 => 9 ko?
         int a[][] = new int[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
