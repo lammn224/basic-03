@@ -19,48 +19,46 @@ public class Bai4_Lesson5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //Kiểm tra có đủ các chũ số từ 1 => 9 ko?
-        int A1[][] = new int[3][3];
-
-        System.out.println("Nhap cac phan tu cua ma tran A");
+        int a[][] = new int[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print("A[" + (i + 1) + "]" + "[" + (j + 1) + "]: ");
-                A1[i][j] = sc.nextInt();
+                System.out.printf("Nhap a[%d][%d]: ", i, j);
+                a[i][j] = sc.nextInt();
             }
         }
-        System.out.println("Ma tran A: ");
+        System.out.println("Ma tran vua nhap la: ");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print(A1[(i)][(j)] + "\t");
+                System.out.print(a[i][j] + " ");
             }
             System.out.print("\n");
         }
-        int k = 0;
-        int K[] = new int[9];
+        int count = 0;
+        int p = 0;
+        int[] sapxep = new int[9];          //gan tung phan tu cho mang sapxep
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                K[k++] = A1[i][j];
+                sapxep[p++] = a[i][j];
             }
         }
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) {       //sap xep lai thu tu cac phan tu tang dan
             for (int j = i + 1; j < 9; j++) {
-                if (K[i] > K[j]) {
-                    int tt = K[i];
-                    K[i] = K[j];
-                    K[j] = tt;
+                if (sapxep[i] > sapxep[j]) {
+                    int t = sapxep[i];
+                    sapxep[i] = sapxep[j];
+                    sapxep[j] = t;
                 }
             }
         }
-        int count = 0;
-        for (int i = 0; i < 9; i++) {
-            if (K[i] == (i + 1)) {
+        for (int i = 0; i < 9; i++) {     //ktra cac chu so
+            if (sapxep[i] == (i + 1)) {
                 count++;
             }
         }
         if (count == 9) {
-            System.out.println("Ma tran du 9 so tu 1 den 9");
+            System.out.println("true");
         } else {
-            System.out.println("Ma tran ko du 9 so tu 1-9");
+            System.out.println("false");
         }
     }
 
