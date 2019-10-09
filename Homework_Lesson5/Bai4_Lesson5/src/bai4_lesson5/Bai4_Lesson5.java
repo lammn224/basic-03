@@ -26,6 +26,13 @@ public class Bai4_Lesson5 {
                 a[i][j] = sc.nextInt();
             }
         }
+        System.out.println("Ma trận vừa nhập là: ");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(a[i][j]+ " ");
+            }
+            System.out.print("\n");
+        }
         int count = 0;
         int count2 = 0;
         int count3 = 0;
