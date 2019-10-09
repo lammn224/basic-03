@@ -35,29 +35,23 @@ public class Bai4_Lesson5 {
         }
         int count = 0;
         int p = 0;
-        int[] sapxep = new int[9];          //gan tung phan tu cho mang sapxep
+        int[] X = new int[9];          //gan tung phan tu cho mang X
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                sapxep[p++] = a[i][j];
+                X[p] = a[i][j];
+                p++;
             }
         }
-        for (int i = 0; i < 8; i++) {       //sap xep lai thu tu cac phan tu tang dan
+        for (int i = 0; i < 8; i++) {
             for (int j = i + 1; j < 9; j++) {
-                if (sapxep[i] > sapxep[j]) {
-                    int t = sapxep[i];
-                    sapxep[i] = sapxep[j];
-                    sapxep[j] = t;
+                if (X[i] == X[j]) {
+                    count++;
                 }
             }
         }
-        for (int i = 0; i < 9; i++) {     //ktra cac chu so
-            if (sapxep[i] == (i + 1)) {
-                count++;
-            }
-        }
-        if (count == 9) {
+        if (count == 0) {
             System.out.println("true");
-        } else {
+        } else if (count != 0) {
             System.out.println("false");
         }
     }
