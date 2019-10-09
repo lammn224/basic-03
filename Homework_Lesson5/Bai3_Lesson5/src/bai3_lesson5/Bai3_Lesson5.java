@@ -18,17 +18,30 @@ public class Bai3_Lesson5 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        String s = "233-1525";
-        System.out.println(s);
-        
-        int c = s.indexOf("-");
-        String so1 = s.substring(0, c);
-        String so2 = s.substring(c + 1);
-        
-        int a = Integer.valueOf(so1);    //lay gia tri kieu nguyen cua so1
-        int b = Integer.valueOf(so2);    //lay gia tri kieu nguyen cua so2
-        
-        System.out.println("Ket qua la:" + (a - b));
+        String s = sc.nextLine();
+        System.out.println("String phep tinh vua nhap la: " + s);
+        char[] c = s.toCharArray();
+        int n = c.length;
+        for (int i = 0; i < n; i++) {
+            if (c[i] == '-') {
+                int tru = s.indexOf("-");
+                String so1 = s.substring(0, tru);
+                String so2 = s.substring(tru + 1);
+
+                int a = Integer.valueOf(so1);    //lay gia tri kieu nguyen cua so1
+                int b = Integer.valueOf(so2);    //lay gia tri kieu nguyen cua so2
+
+                System.out.println("Ket qua la:" + (a - b));
+            } else if(c[i] == '+') {
+                int cong = s.indexOf("+");
+                String so1 = s.substring(0, cong);
+                String so2 = s.substring(cong + 1);
+
+                int a = Integer.valueOf(so1);    //lay gia tri kieu nguyen cua so1
+                int b = Integer.valueOf(so2);    //lay gia tri kieu nguyen cua so2
+
+                System.out.println("Ket qua la:" + (a + b));
+            }
+        }
     }
 }

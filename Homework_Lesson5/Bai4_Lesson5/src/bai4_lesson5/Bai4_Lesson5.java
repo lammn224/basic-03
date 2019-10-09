@@ -19,63 +19,49 @@ public class Bai4_Lesson5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //Kiểm tra có đủ các chũ số từ 1 => 9 ko?
-        int a[][] = new int[3][3];
+        int A1[][] = new int[3][3];
+
+        System.out.println("Nhap cac phan tu cua ma tran A");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.printf("Nhap a[%d][%d]: ", i, j);
-                a[i][j] = sc.nextInt();
+                System.out.print("A[" + (i + 1) + "]" + "[" + (j + 1) + "]: ");
+                A1[i][j] = sc.nextInt();
             }
         }
-        System.out.println("Ma trận vừa nhập là: ");
+        System.out.println("Ma tran A: ");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print(a[i][j]+ " ");
+                System.out.print(A1[(i)][(j)] + "\t");
             }
             System.out.print("\n");
         }
-        int count = 0;
-        int count2 = 0;
-        int count3 = 0;
-        int count4 = 0;
-        int count5 = 0;
-        int count6 = 0;
-        int count7 = 0;
-        int count8 = 0;
-        int count9 = 0;
+        int k = 0;
+        int K[] = new int[9];
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j <3 ; j++) {
-                if (a[i][j] == 1) {
-                    count++;
-                }
-                if (a[i][j] == 2) {
-                    count2++;
-                }
-                if (a[i][j] == 3) {
-                    count3++;
-                }
-                if (a[i][j] == 4) {
-                    count4++;
-                }
-                if (a[i][j] == 5) {
-                    count5++;
-                }
-                if (a[i][j] == 6) {
-                    count6++;
-                }
-                if (a[i][j] == 7) {
-                    count7++;
-                }
-                if (a[i][j] == 8) {
-                    count8++;
-                }
-                if (a[i][j] == 9) {
-                    count9++;
+            for (int j = 0; j < 3; j++) {
+                K[k++] = A1[i][j];
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = i + 1; j < 9; j++) {
+                if (K[i] > K[j]) {
+                    int tt = K[i];
+                    K[i] = K[j];
+                    K[j] = tt;
                 }
             }
         }
-        if (count == 1 && count2 == 1 && count3 == 1 && count4 == 1 && count5 == 1 && count6 == 1 && count7 == 1 && count8 == 1 && count9 == 1) {
-            System.out.println("true");
-        }else System.out.println("false");
+        int count = 0;
+        for (int i = 0; i < 9; i++) {
+            if (K[i] == (i + 1)) {
+                count++;
+            }
+        }
+        if (count == 9) {
+            System.out.println("Ma tran du 9 so tu 1 den 9");
+        } else {
+            System.out.println("Ma tran ko du 9 so tu 1-9");
+        }
     }
 
 }
