@@ -18,21 +18,23 @@ public class Bai1_Lesson5 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String special = "!@#$%^&*()}";
         System.out.print("Nhap vao chuoi ky tu bat ki: ");
         String s = sc.nextLine();
-        boolean check = containSpecial(s);
+        boolean check = containSpecial(s, special);
         System.out.println(check);
     }
 
-    public static boolean containSpecial(String s) {
-        //String[] strArray = new String[] {s};  // chuyển từ String sang String array
-        char[] c = s.toCharArray();
-        int n = c.length;
-        for (int i = 0; i < n; i++) {
-            if (c[i] == '!' || c[i] == '@' || c[i] == '#' || c[i] == '$' || c[i] == '%' || c[i] == '^' || c[i] == '&' || c[i] == '*' || c[i] == '(' || c[i] == ')') {
-                return true;
+    public static boolean containSpecial(String s, String special) {
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < special.length(); j++) {
+                if(s.charAt(i) == special.charAt(j)) {
+                    return true;
+                }
             }
         }
+        
+       
         return false;
     }
 }
