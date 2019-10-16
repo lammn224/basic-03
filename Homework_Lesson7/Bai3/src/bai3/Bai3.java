@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lesson7;
+package bai3;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author hp
  */
-public class Lesson7 {
+public class Bai3 {
 
     public static int x, y, n;
     public static Scanner sc = new Scanner(System.in);
