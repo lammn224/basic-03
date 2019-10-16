@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai1;
-
 import java.util.Scanner;
 
 /**
@@ -13,9 +11,6 @@ import java.util.Scanner;
  */
 public class Bai1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int gio, phut, giay;
