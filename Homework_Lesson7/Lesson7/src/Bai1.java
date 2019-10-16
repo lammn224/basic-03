@@ -40,13 +40,16 @@ public class Bai1 {
         int T0 = gio * 3600 + phut * 60 + giay;
         System.out.println(T0);
 
-        Tinhtoan1s(gio, phut, giay, str, T0);
-        Tinhtoan1000s(gio, phut, giay, str, T0);
+        System.out.print("Nhap so giay them vao: ");
+        int add = sc.nextInt();
+
+        Tinhtoan1s(gio, phut, giay, str, T0, add);
+        //Tinhtoan1000s(gio, phut, giay, str, T0);
     }
 
-    public static void Tinhtoan1s(int gio, int phut, int giay, String str, int T0) {
-        System.out.print("Sau 1s so giay la: ");
-        int T1 = T0 + 1;
+    public static void Tinhtoan1s(int gio, int phut, int giay, String str, int T0, int add) {
+        System.out.printf("Sau %ds so giay la: ", add);
+        int T1 = T0 + add;
         System.out.println(T1);
 
         //System.out.print("Gio moi la: ");
@@ -66,12 +69,12 @@ public class Bai1 {
             gio1 = gio1 - 12;
             str = "PM";
         }
-        System.out.print("Thoi gian sau 1s la: ");
+        System.out.printf("Thoi gian sau %ds la: ", add);
         System.out.printf("%dh %dm %ds " + str + "\n", gio1, phut1, giay1);
 
     }
 
-    private static void Tinhtoan1000s(int gio, int phut, int giay, String str, int T0) {
+    /* private static void Tinhtoan1000s(int gio, int phut, int giay, String str, int T0) {
         System.out.print("Sau 1000s so giay la: ");
         int T1000 = T0 + 1000;
         System.out.println(T1000);
@@ -94,5 +97,5 @@ public class Bai1 {
         }
         System.out.print("Thoi gian sau 1000s la: ");
         System.out.printf("%dh %dm %ds " + str + "\n", gio1000, phut1000, giay1000);
-    }
+    }*/
 }
